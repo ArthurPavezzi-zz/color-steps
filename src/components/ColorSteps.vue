@@ -38,7 +38,9 @@ export default {
   },
   computed: {
     colors() {
-      return this.interpolateColors(this.color1, this.color2, this.steps);
+      const color1 = `${this.color1}000000`.substr(0, 7)
+      const color2 = `${this.color2}000000`.substr(0, 7)
+      return this.interpolateColors(color1, color2, this.steps);
     },
     visualSteps() {
       return this.steps - 2;
